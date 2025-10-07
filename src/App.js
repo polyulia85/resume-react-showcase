@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import "./App.css";
-import avatar from "./assets/IMG_20220922_114102.jpg";
+import avatar from "./assets/avatar.jpg";
 
 export default function App() {
   const rootRef = useRef(null);

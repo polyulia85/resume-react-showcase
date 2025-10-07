@@ -1,0 +1,444 @@
+/* ========== BASE ========== */
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background:#efede7;
+  color:#2c2c2c;
+  line-height:1.5;
+}
+
+/* ========== GRID LAYOUT ========== */
+/* 2 колонки, 2 ряда: слева тёмная полоса на всю высоту,
+   справа: вверху бежевый баннер фиксированной высоты, ниже контент */
+.resume-grid{
+  max-width: 1200px;
+  margin: 32px auto;
+  display: grid;
+  grid-template-columns: 38% 62%;   /* ширина как в референсе */
+  grid-template-rows: 200px auto;   /* фиксированная высота баннера */
+  background:#ffffff;
+  border-radius: 0;                  /* без скруглений как в макете */
+  box-shadow: 0 4px 18px rgba(0,0,0,.06);
+  overflow: hidden;
+}
+
+/* ========== LEFT RAIL ========== */
+.left-rail{
+  grid-column: 1 / 2;
+  grid-row: 1 / span 2;
+  background:#4a4a4a;               /* графит */
+  color:#f6f6f6;
+  padding: 24px 24px 36px;
+  display:flex;
+  flex-direction: column;
+  align-items: stretch;   /* тянем блоки на всю ширину колонки */
+}
+
+.avatar-wrap{
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #ffffff;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.profile-photo{width:100%;height:100%;object-fit:cover}
+
+.person-name{display:none;}          /* имя только в баннере */
+.tagline{font-size:14px;opacity:.95;margin:8px 0 14px}
+
+.contact-block p{margin:2px 0;font-size:14px}
+.contact-block a{
+  color:#f6f6f6;
+  text-decoration:none;
+  border-bottom:1px dotted rgba(255,255,255,.45)
+}
+.contact-block a:hover{border-bottom-color:transparent}
+
+.section-title{
+  margin-top:22px;font-size:15px;text-transform:uppercase;letter-spacing:.08em;
+  color:#e8d8c8;border-bottom:1px solid rgba(255,255,255,.25);padding-bottom:6px;
+}
+.plain-list{list-style:none;margin-top:10px}
+.plain-list li{margin:7px 0;font-size:14px}
+
+/* ========== TOP RIGHT BANNER ========== */
+.top-band{
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  background:#f1eee7;                /* бежевый как в примере */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 0;                         /* чистая полоса */
+  border-bottom:1px solid #e3ded4;
+}
+.band-inner{ text-align:center; color:#333; }
+
+.band-name{
+  font-size: 36px;                    /* крупное имя */
+  letter-spacing: 0.45em;             /* широкий кернинг */
+  font-weight: 700;
+  color:#2a2a2a;
+}
+.band-underline{
+  display:block;
+  width: 74px;
+  height: 3px;
+  margin: 12px auto 10px;
+  background:#3a3a3a;
+  border-radius: 2px;
+}
+.band-contacts{
+  margin-top: 2px;
+  font-size: 14.5px;
+  color:#4f4f4f;
+  letter-spacing:.02em;
+  white-space: nowrap;
+}
+.band-contacts a{
+  color:#4f4f4f;
+  text-decoration:none;
+  border-bottom:1px dotted rgba(0,0,0,.25);
+}
+.band-contacts a:hover{ border-bottom-color: transparent; }
+
+/* ========== MAIN CONTENT (BOTTOM RIGHT) ========== */
+.content{
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  background:#ffffff;
+  padding: 36px 48px 48px;
+}
+.hline{
+  font-size:22px;letter-spacing:.06em;font-weight:700;margin:0 0 12px;position:relative;
+}
+.hline::after{
+  content:"";
+  display:block;
+  width:80px;height:3px;
+  margin-top:8px;
+  background:#3a3a3a;                /* тот же цвет, что и под именем */
+}
+.content .meta{color:#666;font-size:14px;margin:2px 0 8px}
+.content p{margin:0 0 14px;font-size:15px}
+.content ul{padding-left:18px;margin-top:6px}
+.content ul li{margin-bottom:6px;font-size:15px}
+.edu-list{list-style:disc}
+
+.band-role {
+  font-size: 18px;             /* крупнее текста контактов */
+  font-weight: 600;
+   color: #ffffff;             
+  text-transform: uppercase;   /* все буквы заглавные */
+  letter-spacing: 0.15em;      /* лёгкое растяжение */
+  margin: 6px 0 16px;          /* отступ сверху и снизу */
+  text-align: center; 
+}
+/* ==== GLASS BUTTONS ==== */
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+/* стеклянные прозрачные кнопки */
+.link-btn {
+  position: relative;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 8px 20px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.1);
+  transition: all 0.35s ease;
+}
+
+/* эффект наведения — терракотовый градиент и подсветка */
+.link-btn:hover {
+  background: linear-gradient(145deg, #7a3e2b, #a45133);
+  border-color: #7a3e2b;
+  box-shadow: 0 0 12px rgba(122, 62, 43, 0.6);
+  transform: translateY(-2px);
+}
+
+/* мягкий эффект нажатия */
+.link-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 0 6px rgba(122, 62, 43, 0.5);
+}
+/* двухстрочная версия для обозначения проекта */
+.link-btn.two-line {
+  padding: 10px 18px;       /* чуть выше, чтобы вместить 2 строки */
+  line-height: 1.1;
+}
+
+.link-btn .btn-title {
+  display: block;
+  font-weight: 700;
+}
+
+.link-btn .btn-sub {
+  display: block;
+  font-size: 12px;
+  opacity: 0.85;            /* аккуратная вторичная строка */
+  letter-spacing: .04em;
+  margin-top: 2px;
+  color: inherit;           /* белый на hover тоже сохраняется */
+}
+
+
+/* универсальный класс на всякий случай */
+.no-after::after { display: none !important; }
+/* ==== FORCE Languages to align like Skills ==== */
+/* максимально специфично + !important, чтобы перебить старые центровки и ::after */
+.languages-section > h2.section-title.section-left {
+  text-align: left !important;
+  border-bottom: 1px solid rgba(255,255,255,.25) !important;
+  padding-bottom: 6px !important;
+  color: #e8d8c8 !important;
+}
+.left-rail section.languages-section > h2.section-title.section-left::after {
+  content: none !important;   /* отрубаем любую псевдо-линию */
+}
+
+/* список как у Skills */
+.left-rail section.languages-section > ul.plain-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+  text-align: left !important;
+  .left-rail .contact-block {
+    width: 100%;
+    align-self: stretch;
+  }
+}
+/* === PATCH: фикс выравнивания в левой колонке === */
+.left-rail { 
+  align-items: stretch !important;   /* тянем все блоки на ширину колонки */
+}
+
+/* растягиваем содержательные секции и блок с кнопками */
+.left-rail section,
+.left-rail .contact-block {
+  width: 100% !important;
+  align-self: stretch !important;
+}
+
+/* при этом оставляем центр только там, где нужно */
+.left-rail .avatar-wrap,
+.left-rail .band-role,
+.left-rail .links {
+  align-self: center !important;
+}
+/* === HEADINGS: dark green + animation === */
+:root{
+  --heading-green: #1f4d3a;   /* тёмно-зелёный */
+}
+
+/* цвет заголовков */
+.band-name{ color: var(--heading-green); }
+.hline, .content h2{ color: var(--heading-green); }
+.left-rail .section-title{ color: var(--heading-green); border-bottom-color: rgba(31,77,58,.45); }
+
+/* подчёркивания/линии в зелёный */
+.hline::after{ background: var(--heading-green); }
+.band-underline{ background: var(--heading-green); }
+
+/* плавное «проявление» заголовков */
+.reveal-title{
+  color: #2a2a2a;                  /* стартовый (до появления) */
+  transform: translateY(10px);
+  transition: color .6s ease, transform .6s ease;
+}
+.reveal-title.reveal-visible{
+  color: var(--heading-green);      /* целевой зелёный */
+  transform: none;
+}
+
+/* линия «вырастает» */
+.line-grow{ width: 0; display:block; }
+.line-grow.reveal-visible{
+  width: 74px;                      /* длина линии */
+  transition: width .7s cubic-bezier(.2,.7,.2,1);
+}
+
+/* слегка подсветим заголовки при наведении */
+.reveal-title:hover{
+  text-shadow: 0 0 6px rgba(31,77,58,.25);
+}
+/* === PATCH: sidebar titles must be white === */
+.left-rail .section-title {
+  color: #ffffff !important;
+  border-bottom-color: rgba(255,255,255,.35) !important;
+}
+
+/* не даём анимации перекрашивать их в зелёный */
+.left-rail .section-title.reveal-title { 
+  color: #ffffff !important; 
+}
+.left-rail .section-title.reveal-title.reveal-visible { 
+  color: #ffffff !important; 
+}
+
+/* на всякий случай: убираем любые псевдоэлементы перед заголовком */
+.left-rail .section-title::before { content: none !important; }
+
+
+/* адаптивность */
+@media (max-width: 600px) {
+  .links {
+    flex-direction: column;
+    align-items: center;
+  }
+  .link-btn {
+    width: 70%;
+    text-align: center;
+  }
+}
+
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 900px){
+  .resume-grid{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    margin: 0;
+    box-shadow: none;
+  }
+  .top-band{ grid-column:1; grid-row:1; padding: 18px 10px; }
+  .band-name{ font-size:24px; letter-spacing:.3em; }
+  .band-underline{ width:60px; height:2px; margin:8px auto; }
+  .band-contacts{ font-size:14px; white-space:normal; }
+
+  .left-rail{
+    grid-column:1; grid-row:2;
+    padding: 20px 16px;
+    text-align:center;
+    align-items: stretch;   /* тянем блоки на всю ширину колонки */
+  }
+  .avatar-wrap{ width:150px; height:150px; margin: 0 auto 8px; }
+
+  .content{ grid-column:1; grid-row:3; padding: 22px 16px 28px; }
+}
+/* === PATCH: Sidebar (left-rail) titles must be white === */
+.left-rail .section-title {
+  color: #ffffff !important;
+  border-bottom-color: rgba(255,255,255,.35) !important;
+}
+
+/* не даём анимации перекрасить их в зелёный */
+.left-rail .section-title.reveal-title { 
+  color: #ffffff !important; 
+}
+.left-rail .section-title.reveal-title.reveal-visible { 
+  color: #ffffff !important; 
+}
+
+/* на всякий случай отключим любые псевдоэлементы перед заголовком */
+.left-rail .section-title::before { content: none !important; }
+/* ===================== ANIMATIONS – paste at the end ===================== */
+
+/* 1) Стартовая анимация всей страницы */
+.page-enter { opacity: 0; transform: translateY(10px); }
+.page-enter.page--ready { animation: pageIn .60s ease-out forwards; }
+@keyframes pageIn { to { opacity: 1; transform: none; } }
+
+/* 2) Плавное появление заголовков и текста при прокрутке */
+.reveal-title,
+.reveal {
+  opacity: 0;
+  transform: translateY(12px);
+}
+.reveal-title.in,
+.reveal.in {
+  animation: fadeUp .7s cubic-bezier(.21,.61,.35,1) forwards;
+}
+@keyframes fadeUp { to { opacity: 1; transform: none; } }
+
+/* 3) Рост декоративной линии (если используешь .line-grow) */
+.line-grow { width: 0 !important; }
+.page--ready .line-grow { animation: growLine .9s .2s ease-out forwards; }
+@keyframes growLine { to { width: 90px; } }
+
+/* 4) Лёгкая «плавучесть» аватарки */
+.profile-photo { will-change: transform; }
+.page--ready .profile-photo { animation: floatY 6s ease-in-out infinite; }
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-4px); }
+}
+
+/* 5) Стеклянные кнопки: пульс + «shine» на ховере */
+.link-btn { position: relative; overflow: hidden; }
+.link-btn.pulse { animation: glassPulse 2.2s ease-in-out infinite; }
+
+@keyframes glassPulse {
+  0%,100% { box-shadow: 0 0 0 rgba(122,62,43,0); }
+  50%     { box-shadow:
+              0 0 18px rgba(255,255,255,.35),
+              0 0 28px rgba(122,62,43,.55); }
+}
+
+/* Блик при наведении */
+.link-btn::after{
+  content:"";
+  position:absolute;
+  inset:-1px;                /* покрываем всю кнопку */
+  border-radius: inherit;
+  background: radial-gradient(120px 60px at -20% -20%,
+              rgba(255,255,255,.55), transparent 60%);
+  transform: translateX(-120%);
+  transition: transform .6s ease;
+  pointer-events: none;
+}
+.link-btn:hover::after{ transform: translateX(220%); }
+
+/* На ховере убираем пульс и усиливаем свечение */
+.link-btn.pulse:hover{
+  animation: none;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(122,62,43,.65),
+              0 0 0 1px #7a3e2b inset;
+}
+
+/* 6) Стагер-задержки (по желанию: добавляй data-delay="200" и т.п.) */
+.reveal[data-delay="100"].in { animation-delay: .1s; }
+.reveal[data-delay="200"].in { animation-delay: .2s; }
+.reveal[data-delay="300"].in { animation-delay: .3s; }
+.reveal[data-delay="400"].in { animation-delay: .4s; }
+.reveal[data-delay="600"].in { animation-delay: .6s; }
+
+/* 7) Доступность: без резких эффектов при prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .page-enter, .reveal-title, .reveal,
+  .link-btn.pulse, .profile-photo, .line-grow {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+/* Стагер для списков: когда UL получил класс .in, анимируем LI по очереди */
+.reveal.reveal-list li {
+  opacity: 0;
+  transform: translateY(8px);
+}
+.reveal.reveal-list.in li {
+  animation: fadeUp .55s cubic-bezier(.21,.61,.35,1) forwards;
+}
+.reveal.reveal-list.in li:nth-child(1) { animation-delay: .05s; }
+.reveal.reveal-list.in li:nth-child(2) { animation-delay: .12s; }
+.reveal.reveal-list.in li:nth-child(3) { animation-delay: .19s; }
+.reveal.reveal-list.in li:nth-child(4) { animation-delay: .26s; }
+.reveal.reveal-list.in li:nth-child(5) { animation-delay: .33s; }
+.reveal.reveal-list.in li:nth-child(6) { animation-delay: .40s; }
+.reveal.reveal-list.in li:nth-child(7) { animation-delay: .47s; }
+.reveal.reveal-list.in li:nth-child(8) { animation-delay: .54s; }
+

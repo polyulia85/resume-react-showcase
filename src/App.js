@@ -152,16 +152,18 @@ export default function App() {
         <section>
           <h2 className="hline reveal-title">Summary</h2>
           <p className="reveal" data-delay="100">
-           In the past two years in the U.S., I designed, coded, and launched <strong>voyage-co.com</strong> — a
-    multifunctional automotive platform that unites <strong>car rentals, pre-purchase
-    inspections, and repair services</strong>. I managed the complete product
-    lifecycle — from UX/UI design and a custom multi-step booking flow to
-    <strong> HubSpot CRM</strong>, <strong>Stripe</strong> integrations, <strong>GA4</strong> and <strong>Tag Manager</strong> analytics,
-    and SEO optimization. These are live, client-facing systems that operate
-    daily and generate revenue. With a strong background in management,
-    marketing, and process development, I combine product thinking,
-    analytical strategy, and hands-on technical execution to build systems
-    that are clear, scalable, and user-focused.
+           I moved to the U.S. in 2023 and started from zero — new country, new language, new direction.
+    With years of management and business-development experience behind me, I taught myself design and coding
+    to rebuild my career through technology.
+    <br /><br />
+    Over these two years, I’ve built working digital products end-to-end — from client booking systems and CRM automation
+    to analytics, payments, and SEO. <strong>Voyage-co.com</strong> grew out of this work and now connects rentals,
+    pre-purchase inspections, and repair services through one integrated platform.
+    <br /><br />
+    I have hands-on experience creating products that actually operate and generate revenue — not concept projects,
+    but systems used by real customers. My background in management and sales helps me see the full process:
+    from strategy and analytics to implementation and client experience. I’m focused, data-driven, and result-oriented,
+    ready to grow within a professional team and contribute to larger-scale technology products.
           </p>
         </section>
 

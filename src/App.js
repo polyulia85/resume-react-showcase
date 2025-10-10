@@ -152,14 +152,16 @@ export default function App() {
         <section>
           <h2 className="hline reveal-title">Summary</h2>
           <p className="reveal" data-delay="100">
-            Over the past two years in the U.S., I developed and launched <strong>voyage-co.com</strong>, a booking and rental platform, along
-            with a dedicated landing page (<strong>voyage-co.com/landing-prepurchase-lite</strong>). I managed
-            the full product cycle — from UX/UI and a custom multi-step booking
-            flow to HubSpot CRM and Stripe integrations, analytics (GA4, Tag
-            Manager), and SEO. These projects demonstrate a hands-on full-stack
-            approach across frontend UI, backend logic, CRM workflows, and
-            performance tracking. I’m looking to apply this experience to
-            larger-scale products and AI-driven automation.
+           In the past two years in the U.S., I designed, coded, and launched <strong>voyage-co.com</strong> — a
+    multifunctional automotive platform that unites <strong>car rentals, pre-purchase
+    inspections, and repair services</strong>. I managed the complete product
+    lifecycle — from UX/UI design and a custom multi-step booking flow to
+    <strong> HubSpot CRM</strong>, <strong>Stripe</strong> integrations, <strong>GA4</strong> and <strong>Tag Manager</strong> analytics,
+    and SEO optimization. These are live, client-facing systems that operate
+    daily and generate revenue. With a strong background in management,
+    marketing, and process development, I combine product thinking,
+    analytical strategy, and hands-on technical execution to build systems
+    that are clear, scalable, and user-focused.
           </p>
         </section>
 

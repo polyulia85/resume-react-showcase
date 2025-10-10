@@ -168,18 +168,51 @@ export default function App() {
         </section>
 
         <section>
-          <h2 className="hline reveal-title">Experience</h2>
-          <h3 className="reveal" data-delay="100">Voyage Co — Founder / Operations &amp; Automation Lead</h3>
-          <p className="meta reveal" data-delay="150">Millbrae, CA • 2023 — Present</p>
-          <ul className="reveal reveal-list" data-delay="200">
-            <li>Designed a 6-step booking flow with validation and dynamic confirmation.</li>
-            <li>Built HubSpot integration (contacts/deals, custom properties, timestamps).</li>
-            <li>Integrated Stripe PaymentIntent (client + server) for secure payments.</li>
-            <li>Implemented GA4, GTM, Clarity; created an end-to-end booking funnel.</li>
-            <li>Developing Twilio chat/voice workflows with CRM sync and confirmations.</li>
-            <li>Used AI tools for content, validation, and comms templates.</li>
-            <li>SEO on pre-purchase keywords boosted visibility and organic traffic.</li>
-          </ul>
+         <h2 className="hline reveal-title">Experience</h2>
+<h3 className="reveal" data-delay="100">
+  Voyage Co — Founder / Software &amp; Automation Lead
+</h3>
+<p className="meta reveal" data-delay="150">
+  Millbrae, CA • 2023 — Present
+</p>
+<ul className="reveal reveal-list" data-delay="200">
+  <li>
+    Built <strong>voyage-co.com</strong> from scratch — a full-stack automotive
+    platform combining car rentals, pre-purchase inspections and repair
+    services. Designed and implemented the architecture, frontend UI/UX, and
+    server-side logic.
+  </li>
+  <li>
+    Developed a custom multi-step booking application with real-time
+    availability filtering, form validation and automated client confirmation
+    flow.
+  </li>
+  <li>
+    Integrated <strong>HubSpot CRM</strong> for end-to-end lead and deal
+    management, <strong>Stripe Payments API</strong> for secure transactions,
+    and a comprehensive analytics stack (<strong>GA4</strong>,{" "}
+    <strong>GTM</strong>, <strong>Microsoft Clarity</strong>) to track user
+    behavior and optimize conversions.
+  </li>
+  <li>
+    Applied AI-driven tools and <strong>Twilio</strong> automation to streamline
+    client communication, create templates and support voice/chat workflows.
+  </li>
+  <li>
+    Implemented SEO and content strategy targeting core keywords, improving
+    organic visibility and traffic.
+  </li>
+  <li>
+    Combined technical development with business operations and process
+    management — from strategy and marketing to automation and performance
+    analysis.
+  </li>
+  <li>
+    <strong>Tech stack:</strong> JavaScript (ES6+), PHP 8, HTML5/CSS3, MySQL,
+    JSON/REST API, Stripe.js, HubSpot API, Twilio, GA4, GTM, WordPress (custom
+    theme), Git/GitHub.
+  </li>
+</ul>
         </section>
 
         <section>
